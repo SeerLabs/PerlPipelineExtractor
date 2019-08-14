@@ -1,0 +1,65 @@
+PS-Resources-1.0
+
+% Sample UPR file for use with TET
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% List of all resource categories which are specified in the file
+searchpath
+cmap
+codelist
+encoding
+glyphlist
+hostfont
+fontoutline
+.
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SearchPath section.
+
+searchpath
+/usr/lib/resource/cmap
+/usr/lib/fonts
+.
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CMap section.
+
+cmap
+mycmap=sample.cmap
+.
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Codelist section.
+
+codelist
+mycodelist=sample.cl
+.
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% encoding section.
+
+encoding
+myencoding=sample.enc
+.
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% glyphlist section.
+
+glyphlist
+myglyphlist=sample.gl
+.
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% hostfont section.
+
+hostfont
+myfont=myfont
+.
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FontOutline section.
+
+fontoutline
+CorporateBold=corpbold.ttf
+.

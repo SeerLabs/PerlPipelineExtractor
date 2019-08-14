@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<project name="Wrapper" default="jar">
+   <property name="src" location="src"/>
+   <property name="lib" location="lib"/>
+   <property name="resources" location="resources"/>
+   <property name="cpy" location="cpy"/>
+   <property name="build" location="build"/>
+   <property name="dist" location="dist"/>
+
+   <path id="build.classpath">
+      <fileset dir="${lib}">
+         <include name="**/*.jar"/>
+      </fileset>
+   </path>
+
+   <target name="mkdir">
+      <mkdir dir="${build}"/>
+      <mkdir dir="${dist}"/>
+   </target>
+   
+   <target name="clean">
+      <delete dir="${build}"/>
+      <delete dir="${dist}"/>
+   </target>
+
+   <target name="compile" depends="clean, mkdir">
+      <javac srcdir="${src}" destdir="${build}" includeantruntime="false">
+         <classpath refid="build.classpath"/>
+      </javac>
+   </target>
+
+   <target name="copy">
+      <copy todir="${dist}" overwrite="true">
+         <fileset dir="${cpy}"/>
+      </copy>
+   </target>
+      
+
+   <target name="jar" depends="compile, copy">
+      <jar destfile="${dist}/${ant.project.name}.jar" basedir="${build}">
+         <manifest>
+            <attribute name="Main-Class" value="wrapper.Wrapper"/>
+         </manifest>
+         <zipgroupfileset dir="${lib}" includes="**/*.jar"/>
+      </jar>
+   </target>
+
+   <target name="run" depends="copy">
+      <java jar="${dist}/${ant.project.name}.jar" fork="true"/>
+   </target>
+
+   <target name="printclasspath">
+   <!-- Write the classpath to the console. Helpful for debugging -->
+   <!-- Create one line per classpath element-->
+   <pathconvert pathsep="${line.separator}" property="echo.classpath" refid="build.classpath">
+   </pathconvert>
+   <!-- Write the result to the console -->
+   <echo message="The following classpath is being used " />
+   <echo message="${echo.classpath}" /> 
+   </target>
+
+</project>

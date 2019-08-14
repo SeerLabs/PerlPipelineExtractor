@@ -1,0 +1,10 @@
+PDFlib license file 1.0
+
+# This is a license file template for PDFlib GmbH products.
+# Replace the 0 in the third column with your actual license key.
+
+TET 3.0 L300902-010000-119768-JJ9742-AVYRF2
+
+# You can place keys for other PDFlib GmbH products here as well.
+# 
+#PDFlib		7.0.4		...
